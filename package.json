@@ -1,0 +1,23 @@
+{
+  "name": "se-primer-v2",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "test": "node tests/offline.mjs",
+    "test:model": "python tests/parite.py",
+    "generate:data": "python generate_data.py",
+    "train:model": "python train.py",
+    "train:release": "python train.py --release",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test:e2e": "start-server-and-test dev http://127.0.0.1:5173 cypress:run",
+    "cypress:run": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^15.5.0",
+    "start-server-and-test": "^2.0.13",
+    "vite": "^7.1.12"
+  }
+}

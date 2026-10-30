@@ -1,0 +1,43 @@
+name: Train and verify ONNX model
+
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: Enforce 15 real sessions
+        required: true
+        default: false
+        type: boolean
+  push:
+    paths: ["data/**", "train.py", "requirements.txt"]
+
+permissions:
+  contents: write
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Train with eval gate
+        run: python train.py ${{ inputs.release && '--release' || '' }}
+      - run: python tests/parite.py
+      - name: Commit reproducible artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add model/model.onnx model/config.json tests/parite.json
+          git diff --cached --quiet || git commit -m "model: train verified ONNX artifact"
+          git push
+      - uses: actions/upload-artifact@v4
+        with:
+          name: se-primer-v2-model
+          path: |
+            model/model.onnx
+            model/config.json
+            tests/parite.json
