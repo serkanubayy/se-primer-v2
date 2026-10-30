@@ -1,0 +1,57 @@
+{
+  "model_name": "se-primer-destek-riski-v2",
+  "version": "2.0.0",
+  "features": [
+    "seviye",
+    "karar_suresi_sn",
+    "karar_degistirme_sayisi",
+    "onceki_yanlis_sayisi",
+    "ipucu_sayisi",
+    "sahne_no"
+  ],
+  "feature_schema": {
+    "seviye": {
+      "type": "number"
+    },
+    "karar_suresi_sn": {
+      "type": "number"
+    },
+    "karar_degistirme_sayisi": {
+      "type": "number"
+    },
+    "onceki_yanlis_sayisi": {
+      "type": "number"
+    },
+    "ipucu_sayisi": {
+      "type": "number"
+    },
+    "sahne_no": {
+      "type": "number"
+    }
+  },
+  "labels": {
+    "0": "standart_akis",
+    "1": "destek_modu"
+  },
+  "decision_threshold": 0.5,
+  "eval_gate": {
+    "metric": "f1",
+    "minimum": 0.82,
+    "written_before_training": true
+  },
+  "metrics": {
+    "accuracy": 0.853333,
+    "precision": 0.878788,
+    "recall": 0.805556,
+    "f1": 0.84058,
+    "roc_auc": 0.947293
+  },
+  "parity": {
+    "max_abs_diff": 9.94706662593714e-08,
+    "tolerance": 0.0001
+  },
+  "random_state": 30107,
+  "rows": 300,
+  "real_sessions": 0,
+  "release_eligible": false
+}

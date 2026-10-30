@@ -1,0 +1,57 @@
+[
+  {
+    "input": {
+      "seviye": 1.0,
+      "karar_suresi_sn": 19.969999313354492,
+      "karar_degistirme_sayisi": 0.0,
+      "onceki_yanlis_sayisi": 0.0,
+      "ipucu_sayisi": 0.0,
+      "sahne_no": 3.0
+    },
+    "p": 0.005065175826079899
+  },
+  {
+    "input": {
+      "seviye": 1.0,
+      "karar_suresi_sn": 3.549999952316284,
+      "karar_degistirme_sayisi": 1.0,
+      "onceki_yanlis_sayisi": 0.0,
+      "ipucu_sayisi": 0.0,
+      "sahne_no": 3.0
+    },
+    "p": 0.006310471370255273
+  },
+  {
+    "input": {
+      "seviye": 1.0,
+      "karar_suresi_sn": 14.819999694824219,
+      "karar_degistirme_sayisi": 1.0,
+      "onceki_yanlis_sayisi": 0.0,
+      "ipucu_sayisi": 0.0,
+      "sahne_no": 3.0
+    },
+    "p": 0.019064610322677422
+  },
+  {
+    "input": {
+      "seviye": 0.0,
+      "karar_suresi_sn": 18.809999465942383,
+      "karar_degistirme_sayisi": 1.0,
+      "onceki_yanlis_sayisi": 1.0,
+      "ipucu_sayisi": 2.0,
+      "sahne_no": 2.0
+    },
+    "p": 0.9942693526296217
+  },
+  {
+    "input": {
+      "seviye": 0.0,
+      "karar_suresi_sn": 27.459999084472656,
+      "karar_degistirme_sayisi": 2.0,
+      "onceki_yanlis_sayisi": 1.0,
+      "ipucu_sayisi": 1.0,
+      "sahne_no": 1.0
+    },
+    "p": 0.9978326694874999
+  }
+]
