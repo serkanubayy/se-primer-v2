@@ -4,11 +4,13 @@
 
 - GitHub: <https://github.com/serkanubayy/se-primer-v2>
 - Canlı uygulama: <https://serkanubayy.github.io/se-primer-v2/>
+- Hugging Face sabit model: <https://huggingface.co/serkan12324/se-primer-v2/resolve/175fe658baee8c8fddb596451218de6db2c8399b/model.onnx>
 - Model: lojistik regresyon, ONNX, deterministik `random_state=30107`
 - Test F1: `0.84058` (yayın kapısı `>= 0.82`)
 - ROC-AUC: `0.947293`
 - Python–ONNX maksimum mutlak fark: `9.947e-8` (tolerans `< 1e-4`)
 - Tarayıcı karşılaştırma sayfası: <https://serkanubayy.github.io/se-primer-v2/demo.html>
+- 60–90 saniyelik demo: <https://github.com/serkanubayy/se-primer-v2/raw/refs/heads/main/docs/se-primer-v2-demo-70s.mp4>
 
 ## Artefaktlar
 
@@ -26,8 +28,6 @@
 ## Teslimden önce kapanması gerekenler
 
 - En az 15 benzersiz gerçek oturumu ekleyip `python train.py --release` kapısını geçirmek.
-- Modeli açık Hugging Face deposuna yüklemek ve commit'e sabit `resolve/<commit>/model.onnx` bağlantısını buraya yazmak.
-- 60–90 saniyelik demo videosunun herkese açık bağlantısını eklemek.
 - Dört bağlantıyı ödevin Google Form'una göndermek.
 
 Gerçek veri ve harici hesap bağlantıları tamamlanmadan çalışma “tamamlandı” olarak işaretlenmez.

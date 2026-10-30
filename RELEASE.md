@@ -4,7 +4,13 @@
 
 Sabit kurallı tutor yerine karar süresi, karar değiştirme, önceki riskli kararlar, ipucu kullanımı, seviye ve sahne numarasını kullanan küçük ONNX modeli eklendi. Model kararı destek modunu, süre baskısını ve açıklama derinliğini değiştirir.
 
-Hugging Face commit kimliği yayın sonrasında buraya yazılacaktır. Tüketici URL'si `main` yerine `resolve/<commit>/model.onnx` biçiminde sabitlenir.
+Hugging Face model deposu: <https://huggingface.co/serkan12324/se-primer-v2>
+
+Yayın commit'i: `175fe658baee8c8fddb596451218de6db2c8399b`
+
+Uygulama ve yeniden üretim kanıtlarında değişken `main` dalı yerine şu sabit artefakt kullanılır:
+
+`https://huggingface.co/serkan12324/se-primer-v2/resolve/175fe658baee8c8fddb596451218de6db2c8399b/model.onnx`
 
 ## Güvenli devreye alma
 

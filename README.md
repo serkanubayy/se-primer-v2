@@ -2,6 +2,10 @@
 
 SE Primer v2, oyuncunun karar süresi ve önceki davranışlarından ek açıklamaya ihtiyaç duyup duymadığını tahmin eden, ONNX tabanlı uyarlanabilir bir yazılım mühendisliği eğitim oyunudur.
 
+- Canlı uygulama: <https://serkanubayy.github.io/se-primer-v2/>
+- Açık model deposu: <https://huggingface.co/serkan12324/se-primer-v2>
+- Commit'e sabit ONNX: <https://huggingface.co/serkan12324/se-primer-v2/resolve/175fe658baee8c8fddb596451218de6db2c8399b/model.onnx>
+
 ## Üç komutla çalıştırma
 
 ```bash

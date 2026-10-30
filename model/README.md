@@ -7,6 +7,10 @@ tags: [tabular-classification, education, onnx, se-primer]
 
 # SE Primer Destek Riski v2 — Model Kartı
 
+Sabit yayın commit'i: `175fe658baee8c8fddb596451218de6db2c8399b`
+
+ONNX: <https://huggingface.co/serkan12324/se-primer-v2/resolve/175fe658baee8c8fddb596451218de6db2c8399b/model.onnx>
+
 ## Amaç
 
 Oyuncunun karar davranışından o sahnede ek öğrenme desteğine ihtiyaç duyup duymadığını tahmin eder. Pozitif sonuçta süre baskısı kaldırılır, daha derin Sokratik ipucu ve ayrıntılı teknik açıklama gösterilir.
