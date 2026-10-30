@@ -23,10 +23,19 @@ jobs:
         with:
           python-version: "3.10"
           cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - run: pip install -r requirements.txt
       - name: Train with eval gate
         run: python train.py ${{ inputs.release && '--release' || '' }}
       - run: python tests/parite.py
+      - name: Install browser test dependencies
+        run: npm install
+      - name: Run offline and browser parity tests
+        run: |
+          npm test
+          npm run test:e2e
       - name: Commit reproducible artifacts
         run: |
           git config user.name "github-actions[bot]"
@@ -41,3 +50,4 @@ jobs:
             model/model.onnx
             model/config.json
             tests/parite.json
+            cypress/videos/

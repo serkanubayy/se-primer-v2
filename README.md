@@ -26,6 +26,8 @@ Tarayıcıda `http://localhost:5173` adresini açın. Model henüz üretilmediys
 
 Gerçek yayın için en az 15 benzersiz gerçek oturum zorunludur. Ana ekrandaki **Veri Toplama Modu** seçilir; her karardan sonra katılımcı ek desteğin faydalı olup olmayacağını kendisi etiketler. Oyun sonunda indirilen CSV'ler kişisel bilgi içermez ve `data/oturumlar.csv` ile birleştirilir. `python train.py --release`, 15 gerçek oturum yoksa özellikle başarısız olur.
 
+İndirilen dosyaları birleştirmek için: `python merge_real_data.py indirilen1.csv indirilen2.csv ...`. Araç şemayı ve `kaynak=gercek` değerini doğrular, tekrarları siler ve kaç benzersiz gerçek oturum bulunduğunu raporlar.
+
 ## Eğitim, doğrulama ve test
 
 ```bash
