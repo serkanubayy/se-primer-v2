@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SE Primer v2 — Model Karşılaştırma Demosu</title>
+  <link rel="stylesheet" href="./src/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+  <style>
+    body{max-width:980px;margin:auto;padding:32px;background:#07111f;color:#edf6ff;font-family:system-ui}
+    .players{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}.player{padding:24px;border:1px solid #29445f;border-radius:20px;background:#102238}
+    .prob{font-size:42px;font-weight:800;margin:12px 0}.support{color:#ffb15c}.standard{color:#67e8b4}table{width:100%;border-collapse:collapse}td{padding:5px;border-bottom:1px solid #29445f}
+  </style>
+</head>
+<body>
+  <p class="eyebrow">60–90 SANİYELİK DEMO KANITI</p>
+  <h1>Aynı sahne, iki davranış, iki farklı karar</h1>
+  <p>Her iki oyuncu da KVKK sahnesindedir. Model yalnızca anonim davranış sinyallerini kullanır.</p>
+  <main class="players" id="players"></main>
+  <script type="module">
+    import { predictSupport } from './src/adaptive.js';
+    const cases = [
+      {name:'Oyuncu A · deneyimli/hızlı', input:{seviye:1,karar_suresi_sn:5,karar_degistirme_sayisi:0,onceki_yanlis_sayisi:0,ipucu_sayisi:0,sahne_no:3}},
+      {name:'Oyuncu B · yeni/zorlanan', input:{seviye:0,karar_suresi_sn:32,karar_degistirme_sayisi:2,onceki_yanlis_sayisi:2,ipucu_sayisi:1,sahne_no:3}}
+    ];
+    for (const item of cases) {
+      const out = await predictSupport(item.input);
+      document.querySelector('#players').insertAdjacentHTML('beforeend', `<section class="player"><h2>${item.name}</h2><div class="prob ${out.support?'support':'standard'}">p=${out.p.toFixed(4)}</div><h3>${out.support?'Destek modu':'Standart akış'}</h3><table>${Object.entries(item.input).map(([k,v])=>`<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</table><p>Çıkarım: ${out.source}</p></section>`);
+    }
+  </script>
+</body></html>
