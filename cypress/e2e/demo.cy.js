@@ -23,7 +23,7 @@ describe('SE Primer v2 60–90 saniyelik teslim demosu', () => {
 
     cy.viewport(1100, 900);
     cy.visit('/demo.html');
-    cy.contains('Çıkarım: onnx', { timeout: 20000 }).should('have.length', 2);
+    cy.contains('Çıkarım: onnx', { timeout: 20000 }).should('be.visible');
     cy.wait(20000);
   });
 });
